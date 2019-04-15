@@ -5,15 +5,20 @@
   
 
   
-  <title>Rokixy&#39;s Blog</title>
+  <title>Java面向对象相关知识点 | Rokixy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Rokixy&#39;s Blog">
-<meta property="og:url" content="https://www.yoursite.com/index.html">
+  <meta name="description" content="Java面向对象的三大特征为：封装、继承和多态。 1. 封装Java中的封装是指一个类把自己内部的实现细节进行隐藏，只暴露对外的接口（比如setter和getter方法）。封装又可以分为属性和方法的封装。把属性定义为private，使它们只能被setter和getter方法来进行设定和获取。或将方法定义为private，使他们只能在所在类内部被调用。下面是例子：lang: java12345678">
+<meta name="keywords" content="Java学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面向对象相关知识点">
+<meta property="og:url" content="https://www.yoursite.com/2019/04/15/Java面向对象相关知识点/index.html">
 <meta property="og:site_name" content="Rokixy&#39;s Blog">
+<meta property="og:description" content="Java面向对象的三大特征为：封装、继承和多态。 1. 封装Java中的封装是指一个类把自己内部的实现细节进行隐藏，只暴露对外的接口（比如setter和getter方法）。封装又可以分为属性和方法的封装。把属性定义为private，使它们只能被setter和getter方法来进行设定和获取。或将方法定义为private，使他们只能在所在类内部被调用。下面是例子：lang: java12345678">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-15T12:43:15.568Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rokixy&#39;s Blog">
+<meta name="twitter:title" content="Java面向对象相关知识点">
+<meta name="twitter:description" content="Java面向对象的三大特征为：封装、继承和多态。 1. 封装Java中的封装是指一个类把自己内部的实现细节进行隐藏，只暴露对外的接口（比如setter和getter方法）。封装又可以分为属性和方法的封装。把属性定义为private，使它们只能被setter和getter方法来进行设定和获取。或将方法定义为private，使他们只能在所在类内部被调用。下面是例子：lang: java12345678">
   
     <link rel="alternate" href="/atom.xml" title="Rokixy&#39;s Blog" type="application/atom+xml">
   
@@ -60,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Java面向对象相关知识点" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Java面向对象相关知识点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/15/Java面向对象相关知识点/" class="article-date">
   <time datetime="2019-04-15T10:26:12.000Z" itemprop="datePublished">2019-04-15</time>
@@ -79,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/15/Java面向对象相关知识点/">Java面向对象相关知识点</a>
+    <h1 class="article-title" itemprop="name">
+      Java面向对象相关知识点
     </h1>
   
 
@@ -125,230 +128,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Java解决在nextInt()后使用nextLine()的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/12/Java解决在nextInt()后使用nextLine()的方法/" class="article-date">
-  <time datetime="2019-04-12T06:16:11.000Z" itemprop="datePublished">2019-04-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java学习/">Java学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/12/Java解决在nextInt()后使用nextLine()的方法/">Java解决在nextInt()后使用nextLine()的方法</a>
-    </h1>
+    <a href="/2019/04/12/Java解决在nextInt()后使用nextLine()的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java解决在nextInt()后使用nextLine()的方法</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Ref:  </strong><a href="http://stackoverflow.com/questions/13102045/skipping-nextline-after-using-next-nextint-or-other-nextfoo-methods" target="_blank" rel="noopener">Scanner is skipping nextLine() after using next() or nextFoo()?</a></p>
-<p>如果在nextInt（）方法之后立即使用nextLine（）方法，请记住nextInt（）读取整数标记; 因此，该行整数输入的最后一个换行符仍在输入缓冲区中排队，下一个nextLine（）将读取整数行的剩余部分（为空）。</p>
-<ul>
-<li><p>在调用了nextInt()后，我们可以先调用一次nextLine()，将该行剩下的内容抛弃；</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = input.nextInt();</span><br><span class="line">input.nextLine();<span class="comment">//抛弃输入整数时最后的换行符</span></span><br><span class="line">String str = input.nextLine();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全部都使用nextLine()读入，然后将其读入的数据转换为Integer。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	i = Interger.prseInt(input.nextLin());</span><br><span class="line">&#125; <span class="keyword">catch</span> (NumberFormatException e)&#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">String str = input.nextLine();</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/12/Java解决在nextInt()后使用nextLine()的方法/" data-id="cjuicng990002t0qa74jszh06" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java学习/">Java学习</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-Java基本语法及例子" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/11/Java基本语法及例子/" class="article-date">
-  <time datetime="2019-04-11T10:02:57.000Z" itemprop="datePublished">2019-04-11</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Java学习/">Java学习</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/Java基本语法及例子/">Java基本语法及例子</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java程序可以看成是一系列对象的集合，他们之间彼此调用，完成工作。下面简单介绍类、对象、方法和实例变量的概念。</p>
-<ul>
-<li><strong>对象：</strong>对象是类的一个实例，有状态和行为。</li>
-<li><strong>类：</strong>类是一个模板，它描述一类对象的行为和状态。</li>
-<li><strong>方法：</strong>方法就是行为，一个类可以有很多方法。所有动作都是在方法中完成的。</li>
-<li><strong>实例变量：</strong>每个对象都有独特的实例变量，对象的状态由这些实例变量的值决定。</li>
-</ul>
-<h2 id="第一个Java程序"><a href="#第一个Java程序" class="headerlink" title="第一个Java程序"></a>第一个Java程序</h2><p>下面的程序将打印字符串 <em>Hello World</em><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"Hello World"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> </p>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p>编写Java程序时，应注意以下几点：</p>
-<ul>
-<li><strong>大小写敏感：</strong>Java对大小写敏感，即Hello与hello不同。</li>
-<li><strong>类名：</strong>类名的首字母应该大写。若类名含有若干单词，那每个首字母应该大写，例如HelloWorld。</li>
-<li><strong>方法名：</strong>所有的方法名都应该以小写字母开头。若方法名含有若干单词，则后面每个单词首字母大写。</li>
-<li><strong>源文件名：</strong>必须和类名相同，后缀为<strong>.java</strong>。（若类名和文件名不同会导致编译错误）。</li>
-<li><strong>主方法入口：</strong>所有的Java程序由<strong> public static void main(String []args)</strong> 方法开始执行。</li>
-</ul>
-<h2 id="Java标识符"><a href="#Java标识符" class="headerlink" title="Java标识符"></a>Java标识符</h2><p>Java所有的组成部分都需要名字。类名、变量名以及方法名都被成为标识符。<br>一下有几点需要注意：</p>
-<ul>
-<li>所有的标识符都应该以字母（A-Z 或者 a-z），美元符（$）、或者下划线（_）开始</li>
-<li>首字母之后可以是字母、美元符、下划线或数字的任何字符组合</li>
-<li>关键字不能用作标识符</li>
-<li>标识符大小写敏感</li>
-<li>非法标识符举例：123abc、-dog</li>
-</ul>
-<h2 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h2><p>Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</p>
-<ul>
-<li>访问控制修饰符：default, public, protected, private</li>
-<li>非访问控制修饰符：final, abstract, static, synchronized</li>
-</ul>
-<p>其中对于访问控制修饰符，可以列出如下表格：</p>
-<table><tr><th></th><th>public</th><th>protected</th><th>default</th><th>private</th></tr><tr><th>同一个类</th><td><strong>√</strong></td><td><strong>√</strong></td><td><strong>√</strong></td><td><strong>√</strong></td></tr><tr><th>同一个包</th><td><strong>√</strong></td><td><strong>√</strong></td><td><strong>√</strong></td><td><strong>×</strong></td></tr><tr><th>子父类</th><td><strong>√</strong></td><td><strong>√</strong></td><td><strong>×</strong></td><td><strong>×</strong></td></tr><tr><th>不同包</th><td><strong>√</strong></td><td><strong>×</strong></td><td><strong>×</strong></td><td><strong>×</strong></td></tr></table>
-
-<h2 id="Java变量"><a href="#Java变量" class="headerlink" title="Java变量"></a>Java变量</h2><p>Java中主要有如下几种类型的变量</p>
-<ul>
-<li>局部变量</li>
-<li>类变量（静态变量）</li>
-<li>成员变量（非静态变量）</li>
-</ul>
-<h2 id="Java数组"><a href="#Java数组" class="headerlink" title="Java数组"></a>Java数组</h2><p>数组是储存在堆上的对象，可以保存多个同类型变量。</p>
-<h2 id="Java枚举"><a href="#Java枚举" class="headerlink" title="Java枚举"></a>Java枚举</h2><p>枚举限制变量只能是预先设定好的值。使用枚举可以减少程序出现错误的可能。<br>比如服装店中有S、M、L、XL四个尺码，设计一个程序限制顾客只能从这四个尺码中选。</p>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Clothes</span></span>&#123;</span><br><span class="line">	<span class="keyword">enum</span> ClothesSize&#123;S,M,L,XL&#125;</span><br><span class="line">	ClothesSize size;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SizeTest</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String []args)</span></span>&#123;</span><br><span class="line">		Clothes t_shirt = <span class="keyword">new</span> Clothes();</span><br><span class="line">		t_shirt.size = Clothes.ClothesSize.L;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 
-<p><strong>注意：</strong>枚举可以单独声明或者声明在类里面。方法、变量、构造函数也可以在枚举中定义。</p>
-<h2 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h2><p>类似于C/C++，Java支持单行以及多行注释，注释中的字符将被Java编译器忽略。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是一个单行注释</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*这是一个</span></span><br><span class="line"><span class="comment">多行注释*/</span></span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/11/Java基本语法及例子/" data-id="cjuicng960001t0qae683gy5r" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java学习/">Java学习</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HelloWorld" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/04/HelloWorld/" class="article-date">
-  <time datetime="2019-04-04T14:47:53.000Z" itemprop="datePublished">2019-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/04/HelloWorld/">HelloWorld</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><p>这是我的第一篇hexo博客！</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/04/HelloWorld/" data-id="cjuicng910000t0qaudokyql1" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/04/hello-world/" class="article-date">
-  <time datetime="2019-04-04T10:20:49.500Z" itemprop="datePublished">2019-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/04/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/04/hello-world/" data-id="cjuicng9d0005t0qaud245465" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
