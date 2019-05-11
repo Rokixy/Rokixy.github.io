@@ -62,6 +62,117 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java抽象类，接口和多态相关" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/05/11/Java抽象类，接口和多态相关/" class="article-date">
+  <time datetime="2019-05-11T06:59:01.000Z" itemprop="datePublished">2019-05-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java学习/">Java学习</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/11/Java抽象类，接口和多态相关/">Java抽象类，接口和多态相关</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h1><p>如果一个类中没有包含足够的信息来描述一个具体的对象，这样的类就是抽象类。<br>抽象类除了不能实例化对象，类的其他功能依然存在，成员变量、成员方法和构造方法的访问方式和普通类一样。<br>由于抽象类不能被实例化，所以必须被继承，通常用于表示  is - a  关系。</p>
+<p><strong>例子：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">/* 文件名 : Employee.java */</span><br><span class="line">public abstract class Employee</span><br><span class="line">&#123;</span><br><span class="line">   private String name;</span><br><span class="line">   private String address;</span><br><span class="line">   private int number;</span><br><span class="line">   public Employee(String name, String address, int number)</span><br><span class="line">   &#123;</span><br><span class="line">      System.out.println(&quot;Constructing an Employee&quot;);</span><br><span class="line">      this.name = name;</span><br><span class="line">      this.address = address;</span><br><span class="line">      this.number = number;</span><br><span class="line">   &#125;</span><br><span class="line">   public double computePay()</span><br><span class="line">   &#123;</span><br><span class="line">     System.out.println(&quot;Inside Employee computePay&quot;);</span><br><span class="line">     return 0.0;</span><br><span class="line">   &#125;</span><br><span class="line">   public void mailCheck()</span><br><span class="line">   &#123;</span><br><span class="line">      System.out.println(&quot;Mailing a check to &quot; + this.name</span><br><span class="line">       + &quot; &quot; + this.address);</span><br><span class="line">   &#125;</span><br><span class="line">   public String toString()</span><br><span class="line">   &#123;</span><br><span class="line">      return name + &quot; &quot; + address + &quot; &quot; + number;</span><br><span class="line">   &#125;</span><br><span class="line">   public String getName()</span><br><span class="line">   &#123;</span><br><span class="line">      return name;</span><br><span class="line">   &#125;</span><br><span class="line">   public String getAddress()</span><br><span class="line">   &#123;</span><br><span class="line">      return address;</span><br><span class="line">   &#125;</span><br><span class="line">   public void setAddress(String newAddress)</span><br><span class="line">   &#123;</span><br><span class="line">      address = newAddress;</span><br><span class="line">   &#125;</span><br><span class="line">   public int getNumber()</span><br><span class="line">   &#123;</span><br><span class="line">     return number;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 文件名 : AbstractDemo.java */</span><br><span class="line">public class AbstractDemo</span><br><span class="line">&#123;</span><br><span class="line">   public static void main(String [] args)</span><br><span class="line">   &#123;</span><br><span class="line">      /* 以下是不允许的，会引发错误 */</span><br><span class="line">      Employee e = new Employee(&quot;George W.&quot;, &quot;Houston, TX&quot;, 43);</span><br><span class="line"> </span><br><span class="line">      System.out.println(&quot;\n Call mailCheck using Employee reference--&quot;);</span><br><span class="line">      e.mailCheck();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h2><p>如果你想设计这样一个类，该类包含一个特别的成员方法，该方法的具体实现由它的子类确定，那么你可以在父类中声明该方法为抽象方法。<br>Abstract 关键字同样可以用来声明抽象方法，抽象方法只包含一个方法名，而没有方法体。<br>抽象方法没有定义，方法名后面直接跟一个分号，而不是花括号。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public abstract class Employee</span><br><span class="line">&#123;</span><br><span class="line">   private String name;</span><br><span class="line">   private String address;</span><br><span class="line">   private int number;</span><br><span class="line"></span><br><span class="line">   public abstract double computePay();</span><br><span class="line"></span><br><span class="line">   //其余代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="抽象类总结规定"><a href="#抽象类总结规定" class="headerlink" title="抽象类总结规定"></a>抽象类总结规定</h2><ol>
+<li>抽象类不能被实例化，如果被实例化，就会报错，编译无法通过。只有抽象类的非抽象子类可以创建对象。</li>
+<li>抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类。</li>
+<li>抽象类中的抽象方法只是声明，不包含方法体，就是不给出方法的具体实现也就是方法的具体功能。</li>
+<li>构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法。</li>
+<li>抽象类的子类必须给出抽象类中的抽象方法的具体实现，除非该子类也是抽象类。</li>
+</ol>
+<hr>
+<h1 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h1><p>接口是java中的一个抽象类型，通常以interface声明，一个类通过实现接口的方式从而继承接口的抽象方法。<br>接口无法被实例化，但可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则必须声明为抽象类，在被实现时通常表示  has - a  关系。</p>
+<p><strong>例子：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/* 文件名 : Animal.java */</span><br><span class="line">interface Animal &#123;</span><br><span class="line">   public void eat();</span><br><span class="line">   public void travel();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* 文件名 : MammalInt.java */</span><br><span class="line">public class MammalInt implements Animal&#123;</span><br><span class="line"></span><br><span class="line">   public void eat()&#123;</span><br><span class="line">      System.out.println(&quot;Mammal eats&quot;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public void travel()&#123;</span><br><span class="line">      System.out.println(&quot;Mammal travels&quot;);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public int noOfLegs()&#123;</span><br><span class="line">      return 0;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public static void main(String args[])&#123;</span><br><span class="line">      MammalInt m = new MammalInt();</span><br><span class="line">      m.eat();</span><br><span class="line">      m.travel();</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="接口与类相似点："><a href="#接口与类相似点：" class="headerlink" title="接口与类相似点："></a>接口与类相似点：</h2><ul>
+<li>一个接口可以有多个方法。</li>
+<li>接口文件保存在 .java 结尾的文件中，文件名使用接口名。</li>
+<li>接口的字节码文件保存在 .class 结尾的文件中。</li>
+<li>接口相应的字节码文件必须在与包名称相匹配的目录结构中。</li>
+</ul>
+<hr>
+<h2 id="接口与类的区别："><a href="#接口与类的区别：" class="headerlink" title="接口与类的区别："></a>接口与类的区别：</h2><ul>
+<li>接口不能用于实例化对象。</li>
+<li>接口没有构造方法。</li>
+<li>接口中所有的方法必须是抽象方法。</li>
+<li>接口不能包含成员变量，除了 static 和 final 变量。</li>
+<li>接口不是被类继承了，而是要被类实现。</li>
+<li>接口支持多继承。</li>
+</ul>
+<hr>
+<h2 id="接口特性"><a href="#接口特性" class="headerlink" title="接口特性"></a>接口特性</h2><ul>
+<li>接口中每一个方法也是隐式抽象的,接口中的方法会被隐式的指定为 public abstract（只能是 public abstract，其他修饰符都会报错）。</li>
+<li>接口中可以含有变量，但是接口中的变量会被隐式的指定为 public static final 变量（并且只能是 public，用 private 修饰会报编译错误）。</li>
+<li>接口中的方法是不能在接口中实现的，只能由实现接口的类来实现接口中的方法。</li>
+</ul>
+<hr>
+<h2 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h2><ol>
+<li>抽象类中的方法可以有方法体，就是能实现方法的具体功能，但是接口中的方法不行。</li>
+<li>抽象类中的成员变量可以是各种类型的，而接口中的成员变量只能是 public static final 类型的。</li>
+<li>接口中不能含有静态代码块以及静态方法(用 static 修饰的方法)，而抽象类是可以有静态代码块和静态方法。</li>
+<li>一个类只能继承一个抽象类，而一个类却可以实现多个接口。</li>
+</ol>
+<hr>
+<h2 id="标记接口"><a href="#标记接口" class="headerlink" title="标记接口"></a>标记接口</h2><p>最常用的继承接口是没有包含任何方法的接口。<br>标记接口是没有任何方法和属性的接口.它仅仅表明它的类属于一个特定的类型,供其他代码来测试允许做一些事情。<br>标记接口作用：简单形象的说就是给某个对象打个标（盖个戳），使对象拥有某个或某些特权。<br>例如：java.awt.event 包中的 MouseListener 接口继承的 java.util.EventListener 接口定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">package java.util;</span><br><span class="line">public interface EventListener</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>没有任何方法的接口被称为标记接口。标记接口主要用于以下两种目的：</p>
+<ul>
+<li><strong>建立一个公共的父接口：</strong><br>正如EventListener接口，这是由几十个其他接口扩展的Java API，你可以使用一个标记接口来建立一组接口的父接口。例如：当一个接口继承了EventListener接口，Java虚拟机(JVM)就知道该接口将要被用于一个事件的代理方案。</li>
+<li><strong>向一个类添加数据类型：</strong><br>这种情况是标记接口最初的目的，实现标记接口的类不需要定义任何接口方法(因为标记接口根本就没有方法)，但是该类通过多态性变成一个接口类型。</li>
+</ul>
+<hr>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><p>同一个行为具有多个不同表现形式或形态的能力，即同一个接口，使用不同的实例而执行不同操作。<br><strong>便利性：</strong>可以使程序有良好的扩展，消除类型之间的耦合关系，并可以对所有类的对象进行通用处理，省去许多重复代码。   </p>
+<h4 id="多态的优点"><a href="#多态的优点" class="headerlink" title="多态的优点"></a>多态的优点</h4><ol>
+<li>消除类型之间的耦合关系</li>
+<li>可替换性</li>
+<li>可扩充性</li>
+<li>接口性</li>
+<li>灵活性</li>
+<li>简化性<h4 id="多态存在的三个必要条件"><a href="#多态存在的三个必要条件" class="headerlink" title="多态存在的三个必要条件"></a>多态存在的三个必要条件</h4></li>
+</ol>
+<ul>
+<li>继承</li>
+<li>重写</li>
+<li>父类引用指向子类对象</li>
+</ul>
+<p><strong>例子：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">abstract class Animal &#123;  </span><br><span class="line">    abstract void eat();  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">class Cat extends Animal &#123;  </span><br><span class="line">    public void eat() &#123;  </span><br><span class="line">        System.out.println(&quot;吃鱼&quot;);  </span><br><span class="line">    &#125;  </span><br><span class="line">    public void voice() &#123;  </span><br><span class="line">        System.out.println(&quot;喵喵&quot;);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">class Dog extends Animal &#123;  </span><br><span class="line">    public void eat() &#123;  </span><br><span class="line">        System.out.println(&quot;吃肉&quot;);  </span><br><span class="line">    &#125;  </span><br><span class="line">    public void voice() &#123;  </span><br><span class="line">        System.out.println(&quot;汪汪&quot;);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Test&#123;</span><br><span class="line">    public static void main(String[] args)&#123;</span><br><span class="line">        Cat cat = new Cat();</span><br><span class="line">        cat.eat();</span><br><span class="line">        cat.voice();</span><br><span class="line">        Dog dog = new Dog();</span><br><span class="line">        dog.eat();</span><br><span class="line">        dog.voice();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h2><p>虚函数的存在是为了多态。<br>Java 中其实没有虚函数的概念，它的普通函数就相当于 C++ 的虚函数，动态绑定是Java的默认行为。如果 Java 中不希望某个函数具有虚函数特性，可以加上 final 关键字变成非虚函数。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://www.yoursite.com/2019/05/11/Java抽象类，接口和多态相关/" data-id="cjvj6grhc0005t0qaz91cbk2j" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java学习/">Java学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Java面向对象相关知识点" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/15/Java面向对象相关知识点/" class="article-date">
@@ -117,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/15/Java面向对象相关知识点/" data-id="cjuicogdo0002fgqavq57hrht" class="article-share-link">Share</a>
+      <a data-url="https://www.yoursite.com/2019/04/15/Java面向对象相关知识点/" data-id="cjvj6grhn0006t0qaarbbyt2f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java学习/">Java学习</a></li></ul>
@@ -169,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/12/Java解决在nextInt()后使用nextLine()的方法/" data-id="cjuicoge8000bfgqabqg9gytp" class="article-share-link">Share</a>
+      <a data-url="https://www.yoursite.com/2019/04/12/Java解决在nextInt()后使用nextLine()的方法/" data-id="cjvj6grh60002t0qaq69p4jxr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java学习/">Java学习</a></li></ul>
@@ -254,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/11/Java基本语法及例子/" data-id="cjuicogdm0001fgqaufrqnt7j" class="article-share-link">Share</a>
+      <a data-url="https://www.yoursite.com/2019/04/11/Java基本语法及例子/" data-id="cjvj6grh40001t0qatqycc50n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java学习/">Java学习</a></li></ul>
@@ -293,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/04/HelloWorld/" data-id="cjuicogdg0000fgqavnnuaiy9" class="article-share-link">Share</a>
+      <a data-url="https://www.yoursite.com/2019/04/04/HelloWorld/" data-id="cjvj6grdm0000t0qarjfp0shp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -338,7 +449,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://www.yoursite.com/2019/04/04/hello-world/" data-id="cjuicoge9000cfgqa1bd9loow" class="article-share-link">Share</a>
+      <a data-url="https://www.yoursite.com/2019/04/04/hello-world/" data-id="cjvj6grho0007t0qa6s9qjsgs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -387,7 +498,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li></ul>
     </div>
   </div>
 
@@ -398,6 +509,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/05/11/Java抽象类，接口和多态相关/">Java抽象类，接口和多态相关</a>
+          </li>
         
           <li>
             <a href="/2019/04/15/Java面向对象相关知识点/">Java面向对象相关知识点</a>
@@ -413,10 +528,6 @@
         
           <li>
             <a href="/2019/04/04/HelloWorld/">HelloWorld</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/04/hello-world/">Hello World</a>
           </li>
         
       </ul>
